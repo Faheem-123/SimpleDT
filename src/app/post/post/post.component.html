@@ -1,0 +1,58 @@
+<select class="form-control" (change)="onChange($event)">
+    <option value="">--Select Authors--</option>
+    <option *ngFor= 'let data of authors' [value]="data.id">{{data.id}} - {{data.first_name}}</option>
+  </select><br/><br/>
+
+  <button class="btn btn-success" style="float: right;" [value]="selectedAuthorId"[routerLink]="['add/'+selectedAuthorId]">Create</button><br/>
+      <table mat-table [dataSource]="posts" class="mat-elevation-z8">
+    
+      
+        <ng-container matColumnDef="post_id">
+          <th mat-header-cell *matHeaderCellDef><b>Id</b></th>
+          <td mat-cell *matCellDef="let element"> {{element.post_id}} </td>
+        </ng-container>
+      
+      
+        <ng-container matColumnDef="title">
+          <th mat-header-cell *matHeaderCellDef> <b>Title</b> </th>
+          <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+        </ng-container>
+      
+      
+        <ng-container matColumnDef="description">
+          <th mat-header-cell *matHeaderCellDef><b>Description</b></th>
+          <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+        </ng-container>
+      
+      
+        <ng-container matColumnDef="content">
+          <th mat-header-cell *matHeaderCellDef><b>Content</b></th>
+          <td mat-cell *matCellDef="let element"> {{element.content}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="date">
+          <th mat-header-cell *matHeaderCellDef><b>Date</b></th>
+          <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+        </ng-container>
+
+        <!-- <ng-container matColumnDef="author_id">
+          <th mat-header-cell *matHeaderCellDef><b>Author_Id</b></th>
+          <td mat-cell *matCellDef="let element"> {{element.author_id}} </td>
+        </ng-container> -->
+  
+  
+        <ng-container matColumnDef="action">
+          <th mat-header-cell *matHeaderCellDef><b>Action</b></th>
+          <td mat-cell *matCellDef="let element"><button mat-raised-button [value]="selectedAuthorId" (click)="openDialog(selectedAuthorId,element.post_id)">Edit</button> 
+            <button mat-raised-button (click)="deleteDialog(selectedAuthorId,element.post_id)">Delete</button></td>
+        </ng-container>
+  
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+
+      <!-- <a [routerLink]="['/post/edit/'+element.author_id+'/'+element.id]">Edit</a> -->
+      
+        <!-- <app-add [selectedAuthorId]="selectedAuthorId"></app-add> -->
+    
+      
