@@ -27,18 +27,8 @@ export class AuthComponent implements OnInit {
 
   ngOnInit(): void {
 
-    // this.getAuthorData();
-
   }
-  // getAuthorData(){}
   displayedColumns: string[] = ['id', 'first_name', 'last_name', 'email', 'birthdate', 'edit'];
-
-  // @ViewChild(MatPaginator) paginator: MatPaginator;
-
-  // ngAfterViewInit() {
-  //   this.authors.paginator = this.paginator;
-  // }
-
   openDialog(id) {
     const dialogRef = this.dialog.open(DialogComponent);
 

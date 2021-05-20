@@ -7,18 +7,18 @@ import { PostComponent } from './post/post.component';
 
 const routes: Routes = [
   {
-    path:'',component:HeaderComponent,
+    path: '', component: HeaderComponent,
 
-    children:[
+    children: [
       {
-        path:'',component:PostComponent,
+        path: '', component: PostComponent,
       },
       {
-        path:'edit/:author_id/:posts_id',component:EditPostComponent
+        path: 'edit/:author_id/:posts_id', component: EditPostComponent
       },
       {
-        path:'add/:id',
-        component:AddComponent
+        path: 'add/:id',
+        component: AddComponent
       }
     ]
   }

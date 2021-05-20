@@ -7,21 +7,21 @@ import { EditAuthComponent } from './edit-auth/edit-auth.component';
 
 const routes: Routes = [
   {
-    path:'',component:HeaderComponent,
+    path: '', component: HeaderComponent,
 
-    children:[
+    children: [
       {
-        path:'',component:AuthComponent,
+        path: '', component: AuthComponent,
       },
       {
-        path:'edit/:id',
-        component:EditAuthComponent,
+        path: 'edit/:id',
+        component: EditAuthComponent,
       },
       {
-        path:'add',
-        component:AddAuthComponent,
+        path: 'add',
+        component: AddAuthComponent,
       }
-      
+
     ]
   }
 ]

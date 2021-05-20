@@ -1,40 +1,34 @@
+<form [formGroup]='addForm' (ngSubmit)="onSubmit()">
+  <div>
+    <mat-form-field>
+      <input formControlName="first_name" matInput placeholder="First Name">
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field>
+      <input formControlName="last_name" matInput placeholder="Last Name">
+    </mat-form-field><br />
+  </div>
 
-<form [formGroup]='addForm'(ngSubmit)="onSubmit()">
-    <div>
-      <mat-form-field>
-        <input formControlName="first_name"matInput placeholder="First Name">
-        <!-- <mat-hint align="end">last name is required</mat-hint> -->
-      </mat-form-field>
-    </div>
-    <div>
-      <mat-form-field>
-        <input formControlName="last_name"matInput placeholder="Last Name">
-        <!-- <mat-hint align="end">email name is required</mat-hint> -->
-      </mat-form-field><br/>
-    </div>
-    
-    <div>
-        <mat-form-field>
-            <input formControlName="email"matInput placeholder="Email">
-            <!-- <mat-hint align="end">email name is required</mat-hint> -->
-        </mat-form-field><br/>
-    </div>
-    
-        <div>
-            <mat-form-field>
-              <input formControlName="birthdate"matInput placeholder="BirthDate">
-              <!-- <mat-hint align="end">email name is required</mat-hint> -->
-            </mat-form-field><br/>
-          </div>
+  <div>
+    <mat-form-field>
+      <input formControlName="email" matInput placeholder="Email">
+    </mat-form-field><br />
+  </div>
 
-          
-        <div>
-            <mat-form-field>
-              <input formControlName="added"matInput placeholder="Added">
-              <!-- <mat-hint align="end">email name is required</mat-hint> -->
-            </mat-form-field><br/>
-          </div>
-     <div>
-      <button type="submit" mat-raised-button class="btn btn-success" [disabled]="!addForm.valid">Submit</button>
-     </div>
+  <div>
+    <mat-form-field>
+      <input formControlName="birthdate" matInput placeholder="BirthDate">
+    </mat-form-field><br />
+  </div>
+
+
+  <div>
+    <mat-form-field>
+      <input formControlName="added" matInput placeholder="Added">
+    </mat-form-field><br />
+  </div>
+  <div>
+    <button type="submit" mat-raised-button class="btn btn-success" [disabled]="!addForm.valid">Submit</button>
+  </div>
 </form>

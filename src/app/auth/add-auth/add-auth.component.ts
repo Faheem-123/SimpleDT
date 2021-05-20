@@ -27,9 +27,6 @@ export class AddAuthComponent implements OnInit {
       birthdate: new FormControl(null,[Validators.required]),
       added: new FormControl(null,[Validators.required])
     });
-
-  //   this.id=this.route.snapshot.params['id'];
-//  this.getAuthorId(this.id);
   }
 
   onSubmit() {

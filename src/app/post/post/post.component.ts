@@ -10,7 +10,6 @@ import { PostService } from '../post.service';
   styleUrls: ['./post.component.css']
 })
 export class PostComponent implements OnInit {
-  // name:String="faheem";
   selectedAuthorId: any
   posts: any;
   authors: any;
@@ -27,11 +26,8 @@ export class PostComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // this.getAuthorsData();
-  }
 
-  // getAuthorsData(){  
-  // }
+  }
 
   onChange(id) {
     console.log(id.target.value);
@@ -60,14 +56,14 @@ export class PostComponent implements OnInit {
     this.router.navigate(['add/' + id])
   }
 
-  deleteDialog(id1,id2) {
+  deleteDialog(id1, id2) {
     const dialogRef = this.dialog.open(DialogComponent);
 
     dialogRef.afterClosed().subscribe(result => {
       this.data = result;
       if (this.data == "true") {
         console.log(this.data);
-        this.myservice.deletePost(id1,id2).subscribe(
+        this.myservice.deletePost(id1, id2).subscribe(
           (response) => {
             window.location.reload()
           }

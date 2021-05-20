@@ -20,10 +20,10 @@ import { AddAuthComponent } from './add-auth/add-auth.component';
     SharedModule,
     MaterialModule
   ],
-  providers:[
+  providers: [
     AuthService,
     {
-      provide:HTTP_INTERCEPTORS,useClass:AuthInterceptorInterceptor, multi:true
+      provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorInterceptor, multi: true
     }
   ]
 })

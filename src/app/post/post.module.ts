@@ -18,10 +18,10 @@ import { AddComponent } from './add/add.component';
     PostRoutingModule,
     SharedModule
   ],
-  providers:[
+  providers: [
     PostService,
     {
-      provide:HTTP_INTERCEPTORS,useClass:PostInterceptor, multi:true
+      provide: HTTP_INTERCEPTORS, useClass: PostInterceptor, multi: true
     }
   ]
 })
